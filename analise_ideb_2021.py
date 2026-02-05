@@ -1,5 +1,14 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+ROOT = Path.cwd()
+if ROOT.name == "notebooks":
+    ROOT = ROOT.parent
+
+DATA = ROOT  
+FIGS = ROOT / "reports" / "figures"
+FIGS.mkdir(parents=True, exist_ok=True)
 
 df = pd.read_excel('2021/ideb_2021_anos_finais.xlsx', sheet_name='estados')
 
